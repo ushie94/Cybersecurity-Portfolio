@@ -23,7 +23,7 @@ This project wasn't just about clicking "Install." It involved solving real-worl
 ## 📜 Standard Operating Procedure (SOP)
 
 The full technical breakdown, including network diagrams and hardening steps, is available here:
-👉 **[View the Full SOP (PDF)](home-lab-setup\Victor_Ushie_SOC_SOCP.pdf)**
+👉 **[View the Full SOP (PDF)](https://github.com/ushie94/Cybersecurity-Portfolio/blob/main/home-lab-setup/Victor_Ushie_SOC_SOCP.pdf)**
 
 ## 🚀 Key Skills Demonstrated
 

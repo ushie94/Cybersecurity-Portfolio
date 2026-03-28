@@ -1,6 +1,6 @@
 ### 📈 Evolution of the Tool
 
-This project is an advanced version of my initial [IP Logic Exercise](../python_projects\programming-logic-fundamentals\ip_filter.py).
+This project is an advanced version of my initial [IP Logic Exercise](https://github.com/ushie94/Cybersecurity-Portfolio/blob/main/home-lab-setup/Victor_Ushie_SOC_SOCP.pdf).
 
 **Key Improvements:**
 
