@@ -1,6 +1,6 @@
-# Project: Multi-Hop Lateral Movement & Telemetry Correlation
+# Multi-Hop Lateral Movement & Telemetry Correlation
 
-### Author: Victor Ushie | Aspiring SOC Analyst
+### Victor Ushie | Aspiring SOC Analyst
 
 ## 🛡️ Executive Summary
 
