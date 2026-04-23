@@ -14,3 +14,4 @@ for ip in ip_addresses:
         print(f"[✓] {ip} is INTERNAL - ALLOW")
     else:
         print(f"[?] {ip} is EXTERNAL - MONITOR")
+        
