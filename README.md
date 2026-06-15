@@ -18,6 +18,8 @@ I am a dedicated Cybersecurity student specializing in \*\*Defensive Operations\
 
 \### 📈 Current Projects
 
+\* \*\*\[Log Parsing Analysis](./log_parsing_project/README.md)\*\*
+
 \* \*\*\[Real-World Log Parser]:\*\* A Python-based tool designed to parse Apache/Honeypot logs and identify Brute Force patterns.
 
 \* \*\*Network Traffic Analysis:\*\* Documenting packet-capture investigations from my home security laboratory.

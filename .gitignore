@@ -1,0 +1,33 @@
+# ====================================================================
+# SECURITY LAB PORTFOLIO - MASTER GITIGNORE
+# ====================================================================
+
+# 1. Ignore Deep Raw Log Dumps (Both Compressed and Extracted)
+log_parsing_project/raw_network/
+log_parsing_project/raw_windows/
+log_parsing_project/raw_network/netflow_day-71/
+log_parsing_project/raw_network/netflow_day-71/netflow_day-71
+
+# 2. Generic Heavy Data Extensions
+*.csv
+*.bz2
+*.log
+*.parquet
+*.txt
+!log_parsing_project/README.md
+!log_parsing_project/soc-lab-normalization/requirements.txt
+
+# 3. Media & Video Production Trash (Keeps Repo Lean)
+tmp_frames/
+*.jpg
+*.jpeg
+*.png
+*.mp4
+*.pdf
+
+# 4. Python Environment & VSCode System Artifacts
+.venv/
+.vscode/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
