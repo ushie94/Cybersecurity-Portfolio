@@ -31,3 +31,35 @@ tmp_frames/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+# Virtual machine disks and installer images — keep lab assets local
+*.qcow2
+*.qcow
+*.vdi
+*.vmdk
+*.vhd
+*.vhdx
+*.iso
+
+# Python-generated cache files
+__pycache__/
+*.py[cod]
+
+# Keep the synthetic input required to reproduce the normalization demo
+!log_parsing_project/soc-lab-normalization/data/sample_auth_events.csv
+
+# Allow only the reviewed OPNsense portfolio evidence images
+!soc-lab/
+soc-lab/*
+!soc-lab/evidence/
+soc-lab/evidence/*
+!soc-lab/evidence/opnsense-https-pass-anti-lockout.png
+!soc-lab/evidence/opnsense-icmp-pass-log.png
+!soc-lab/evidence/tcpdump-https-handshake.png
+!soc-lab/evidence/tcpdump-icmp-request-reply.png
+
+# Keep local report backups out of the portfolio
+opnsense-soc-investigation.md.bak
+opnsense-soc-investigation.md.before-evidence-update.bak
+
+# Allow the OPNsense lab overview
+!soc-lab/README.md
