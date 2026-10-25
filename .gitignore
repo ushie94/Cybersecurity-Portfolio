@@ -54,6 +54,9 @@ soc-lab/*
 soc-lab/evidence/*
 !soc-lab/evidence/opnsense-https-pass-anti-lockout.png
 !soc-lab/evidence/opnsense-icmp-pass-log.png
+!soc-lab/evidence/opnsense-icmp-block-rule.png
+!soc-lab/evidence/opnsense-icmp-block-logs.png
+!soc-lab/evidence/icmp-block-test-before-after.png
 !soc-lab/evidence/tcpdump-https-handshake.png
 !soc-lab/evidence/tcpdump-icmp-request-reply.png
 

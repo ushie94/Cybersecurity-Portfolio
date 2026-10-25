@@ -85,3 +85,19 @@ These are learning alignments, not a claim of formal NIST CSF compliance.
 This is a small virtual lab for defensive-security learning. Results apply to the tested lab configuration and do not establish the security of a production network.
 
 The firewall virtual disk and other large virtual-machine assets are kept out of the public repository. Only selected evidence screenshots and documentation are intended for publication.
+
+## Firewall Rule Enforcement — ICMP Block Test
+
+**Result:** Successful.
+
+A temporary OPNsense LAN rule was configured to block ICMP traffic from the Ubuntu client (`192.168.10.187`) to `1.1.1.1`. Four blocked packets appeared in OPNsense Live View. After disabling the rule and applying the change, all four ping requests succeeded.
+
+**Evidence:**
+
+- [E-06 — Firewall rule configuration](evidence/opnsense-icmp-block-rule.png)
+- [E-07 — Blocked ICMP events](evidence/opnsense-icmp-block-logs.png)
+- [E-08 — Before-and-after ping results](evidence/icmp-block-test-before-after.png)
+
+**Cleanup:** The temporary block rule remains disabled.
+
+**Learning outcome:** Practised firewall rule ordering, policy enforcement, log validation, and before-and-after testing.

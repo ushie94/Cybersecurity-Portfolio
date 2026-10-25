@@ -115,8 +115,60 @@ The firewall permitted the observed HTTPS connection and the TCP handshake compl
 - `soc-lab/evidence/opnsense-https-pass-anti-lockout.png`
 - `soc-lab/evidence/tcpdump-https-handshake.png`
 
+## 6. Test C — ICMP Firewall Rule Enforcement
 
-## 6. Timestamp Correlation
+### Objective
+
+Test whether an explicit OPNsense LAN rule blocks ICMP traffic from the Ubuntu client to a specific destination, and validate the result using firewall logs and a repeated connectivity test.
+
+### Rule Configuration
+
+- Interface: LAN
+- Direction: In
+- Protocol: ICMP
+- Source: `192.168.10.187/32`
+- Destination: `1.1.1.1/32`
+- Action: Block
+- Logging: Enabled
+- Rule order: Above the default IPv4 LAN allow rule
+
+The `/32` prefix matches one IPv4 address. The specific block rule was placed above the broader allow rule.
+
+### Test A — Rule Enabled
+
+From the Ubuntu client, executed:
+
+`ping -c 4 1.1.1.1`
+
+**Result:** Four packets transmitted, zero received, and 100% packet loss.
+
+OPNsense Live View displayed four matching ICMP block events labelled `LAB - Block ICMP test`.
+
+### Test B — Rule Disabled
+
+After disabling the temporary rule and applying the configuration, the same ping test was repeated.
+
+**Result:** Four packets transmitted, four received, and 0% packet loss.
+
+OPNsense Live View showed ICMP PASS events under the default IPv4 LAN allow rule.
+
+### Finding
+
+The results support the conclusion that the temporary firewall rule blocked the tested ICMP traffic. After the rule was disabled, the same test succeeded. The matching firewall logs provide evidence consistent with the client-side results.
+
+This finding is limited to the source, destination, protocol, and lab configuration tested.
+
+### Evidence
+
+- E-06 — `soc-lab/evidence/opnsense-icmp-block-rule.png`
+- E-07 — `soc-lab/evidence/opnsense-icmp-block-logs.png`
+- E-08 — `soc-lab/evidence/icmp-block-test-before-after.png`
+
+### Cleanup
+
+The temporary block rule was disabled after testing and retained in the configuration for future practice.
+
+## 7. Timestamp Correlation
 
 The Ubuntu host reported:
 
@@ -129,7 +181,7 @@ The OPNsense shell reports UTC (+0000), while the Ubuntu host reports WAT (UTC+1
 
 Do not silently adjust the original evidence timestamps.
 
-## 7. NIST Cybersecurity Framework 2.0 Alignment
+## 8. NIST Cybersecurity Framework 2.0 Alignment
 
 This exercise supports selected activities associated with the following functions:
 
@@ -142,7 +194,7 @@ This exercise supports selected activities associated with the following functio
 
 These are practical learning alignments, not a claim of formal NIST CSF compliance.
 
-## 8. Evidence Register
+## 9. Evidence Register
 
 | Evidence ID | Evidence description | Status |
 |---|---|---|
@@ -151,10 +203,13 @@ These are practical learning alignments, not a claim of formal NIST CSF complian
 | E-03 | ICMP request/reply packet capture | File confirmed present |
 | E-04 | OPNsense HTTPS PASS event | File confirmed present |
 | E-05 | HTTPS TCP handshake packet capture | File confirmed present |
+| E-06 | OPNsense ICMP block rule configuration | File added for review |
+| E-07 | OPNsense Live View showing blocked ICMP events | File added for review |
+| E-08 | Before-and-after ICMP ping results | File added for review |
 
 Evidence should remain unaltered. Keep original screenshots and avoid including passwords, session cookies, or unrelated sensitive information.
 
-## 9. Outstanding Actions
+## 10. Outstanding Actions
 
 - [x] Confirm the four screenshot filenames and locations.
 - [x] Confirm the TCP handshake screenshot exists.
@@ -162,7 +217,7 @@ Evidence should remain unaltered. Keep original screenshots and avoid including 
 - [ ] Investigate the HTTP 200 versus HTTP 403 difference using relevant logs and repeatable observations only if needed.
 - [ ] Record any additional findings before closing the investigation.
 
-## 10. Overall Conclusion
+## 11. Overall Conclusion
 
 The lab demonstrated successful ICMP communication and successful TCP connection establishment to the OPNsense HTTPS service. Firewall logs and packet captures provided complementary evidence of the observed traffic.
 
