@@ -58,8 +58,8 @@ The evidence confirms ICMP communication between the SOC client and the firewall
 
 ### Evidence files
 
-- `soc-lab/evidence/opnsense-icmp-pass-log.png`
-- `soc-lab/evidence/tcpdump-icmp-request-reply.png`
+- [OPNsense ICMP PASS event](soc-lab/evidence/opnsense-icmp-pass-log.png)
+- [ICMP request/reply packet capture](soc-lab/evidence/tcpdump-icmp-request-reply.png)
 
 
 ## 5. Test B — HTTPS and TCP Connectivity
@@ -112,8 +112,8 @@ The firewall permitted the observed HTTPS connection and the TCP handshake compl
 
 ### Evidence files
 
-- `soc-lab/evidence/opnsense-https-pass-anti-lockout.png`
-- `soc-lab/evidence/tcpdump-https-handshake.png`
+- [OPNsense HTTPS PASS event](soc-lab/evidence/opnsense-https-pass-anti-lockout.png)
+- [HTTPS TCP handshake packet capture](soc-lab/evidence/tcpdump-https-handshake.png)
 
 ## 6. Test C — ICMP Firewall Rule Enforcement
 
@@ -160,9 +160,9 @@ This finding is limited to the source, destination, protocol, and lab configurat
 
 ### Evidence
 
-- E-06 — `soc-lab/evidence/opnsense-icmp-block-rule.png`
-- E-07 — `soc-lab/evidence/opnsense-icmp-block-logs.png`
-- E-08 — `soc-lab/evidence/icmp-block-test-before-after.png`
+- E-06 — [OPNsense ICMP block rule configuration](soc-lab/evidence/opnsense-icmp-block-rule.png)
+- E-07 — [OPNsense blocked ICMP events](soc-lab/evidence/opnsense-icmp-block-logs.png)
+- E-08 — [Before-and-after ICMP ping results](soc-lab/evidence/icmp-block-test-before-after.png)
 
 ### Cleanup
 
